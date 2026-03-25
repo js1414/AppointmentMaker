@@ -5,7 +5,7 @@ namespace AppointmentMaker.Models
 {
     public class AppointmentModel
     {
-        public Guid Id { get; set; } = Guid.NewGuid(); //Will auto increment ID number in the list
+        public int Id { get; set; } //Will auto increment ID number in the list
 
         [Required] // patient's name strictly required
         [StringLength(20, MinimumLength = 4)]  // data validation, the field will have max characters of 20 and min of 4

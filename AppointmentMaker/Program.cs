@@ -1,5 +1,7 @@
 ﻿using AppointmentMaker.Data;
 using AppointmentMaker.Models;
+using AppointmentMaker.Repositories;
+using AppointmentMaker.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +15,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+// Register Repository
+builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+
+// Register Service
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+
 
 // 3️⃣ Add MVC
 builder.Services.AddControllersWithViews();

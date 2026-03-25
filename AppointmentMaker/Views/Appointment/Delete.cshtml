@@ -12,6 +12,8 @@
 <form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
     <button type="submit" class="btn btn-danger">Delete</button>
+
+    <!-- link it to back to index action from the controller-->
     <a asp-action="Index" class="btn btn-secondary">Cancel</a>
 
 </form>
